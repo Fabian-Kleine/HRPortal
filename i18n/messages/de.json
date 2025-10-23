@@ -1,0 +1,10 @@
+{
+  "LoginForm": {
+    "title": "Melden Sie sich in Ihrem Konto an",
+    "subtitle": "Geben Sie unten Ihre E-Mail-Adresse ein, um sich in Ihrem Konto anzumelden",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "m@beispiel.de",
+    "passwordLabel": "Passwort",
+    "loginButton": "Anmelden"
+  }
+}
