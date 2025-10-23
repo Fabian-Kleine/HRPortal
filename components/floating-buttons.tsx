@@ -37,7 +37,7 @@ export function FloatingButtons() {
         <div className="fixed bottom-4 right-4 z-50 flex items-center justify-center flex-col gap-2">
             <Button
                 variant="outline"
-                size="icon"
+                size="icon-lg"
                 className="p-2"
                 onClick={() => {
                     const newLocale = locale === 'en' ? 'de' : 'en';
@@ -49,8 +49,8 @@ export function FloatingButtons() {
                     src={locale === 'en' ? '/de.png' : '/gb.png'}
                     alt="Locale"
                     className="object-cover h-full w-full rounded-full"
-                    width={24}
-                    height={16}
+                    width={36}
+                    height={36}
                 />
             </Button>
             <ThemeToggleButton
