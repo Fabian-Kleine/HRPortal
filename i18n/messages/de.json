@@ -6,5 +6,20 @@
     "emailPlaceholder": "m@beispiel.de",
     "passwordLabel": "Passwort",
     "loginButton": "Anmelden"
+  },
+  "AppSidebar": {
+    "navigation": "Navigation",
+    "home": "Startseite",
+    "calendar": "Kalender",
+    "timeRecords": "Zeiterfassung",
+    "settings": "Einstellungen",
+    "logout": "Abmelden"
+  },
+  "NavBreadcrumb": {
+    "items": {
+      "home": "Startseite",
+      "calendar": "Kalender",
+      "timerecords": "Zeiterfassung"
+    }
   }
 }
