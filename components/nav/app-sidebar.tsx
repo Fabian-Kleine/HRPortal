@@ -2,13 +2,10 @@
 
 import * as React from "react"
 import {
-  BookOpen,
   BookUser,
   CalendarClock,
   CalendarDays,
   House,
-  PieChart,
-  Settings2,
 } from "lucide-react"
 
 import { NavItems } from "@/components/nav/nav-items"
