@@ -22,6 +22,9 @@
       "timerecords": "Zeiterfassung"
     }
   },
+  "FloatingButtons": {
+    "changeLanguage": "Sprache ändern"
+  },
   "HomePage": {
     "terminal": {
       "title": "Terminal",
