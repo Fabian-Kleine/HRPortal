@@ -21,5 +21,30 @@
       "calendar": "Kalender",
       "timerecords": "Zeiterfassung"
     }
+  },
+  "HomePage": {
+    "terminal": {
+      "title": "Terminal",
+      "description": "Verwalten Sie Ihre Sitzung",
+      "active": "Anwesend ({location}) seit {time}",
+      "break": "Pause",
+      "inactive": "Abwesend",
+      "startWorkday": "Arbeitstag beginnen",
+      "pause": "Pause",
+      "endWorkday": "Arbeitstag beenden",
+      "inOffice": "Im Büro",
+      "remote": "Remote"
+    },
+    "vacation": {
+      "title": "Urlaub",
+      "description": "Urlaubsinformationen",
+      "entitlement": "Urlaubsanspruch",
+      "taken": "Urlaub genommen",
+      "planned": "Urlaub geplant",
+      "remaining": "Urlaub verbleibend",
+      "days": "Tage",
+      "chartLabel": "Urlaubstage",
+      "daysLeft": "Tage übrig"
+    }
   }
 }
