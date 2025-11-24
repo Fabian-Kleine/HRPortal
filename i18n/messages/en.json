@@ -49,5 +49,38 @@
       "chartLabel": "Vacation Days",
       "daysLeft": "Days Left"
     }
+  },
+  "CalendarPage": {
+    "dialog": {
+      "title": "Add Absence",
+      "description": "Create a new absence entry.",
+      "editTitle": "Edit Absence",
+      "editDescription": "Update the absence entry."
+    },
+    "details": {
+      "description": "Manage absences for this day.",
+      "noFeatures": "No absences for this day."
+    },
+    "form": {
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "type": "Type of Absence",
+      "selectType": "Select type...",
+      "description": "Description",
+      "descriptionPlaceholder": "Optional description",
+      "totalDays": "Total Days",
+      "workdays": "Workdays",
+      "vacationDaysUsed": "Vacation Days Used"
+    },
+    "actions": {
+      "cancel": "Cancel",
+      "save": "Save",
+      "add": "Add Absence"
+    },
+    "absenceTypes": {
+      "vacation": "Vacation",
+      "businessTrip": "Business Trip",
+      "sickLeave": "Sick Leave"
+    }
   }
 }
