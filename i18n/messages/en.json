@@ -22,6 +22,9 @@
       "timerecords": "Time Records"
     }
   },
+  "FloatingButtons": {
+    "changeLanguage": "Change Language"
+  },
   "HomePage": {
     "terminal": {
       "title": "Terminal",
