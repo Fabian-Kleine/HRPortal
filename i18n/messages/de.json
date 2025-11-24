@@ -49,5 +49,38 @@
       "chartLabel": "Urlaubstage",
       "daysLeft": "Tage übrig"
     }
+  },
+  "CalendarPage": {
+    "dialog": {
+      "title": "Abwesenheit hinzufügen",
+      "description": "Erstellen Sie einen neuen Abwesenheitseintrag.",
+      "editTitle": "Abwesenheit bearbeiten",
+      "editDescription": "Aktualisieren Sie den Abwesenheitseintrag."
+    },
+    "details": {
+      "description": "Verwalten Sie Abwesenheiten für diesen Tag.",
+      "noFeatures": "Keine Abwesenheiten für diesen Tag."
+    },
+    "form": {
+      "startDate": "Startdatum",
+      "endDate": "Enddatum",
+      "type": "Art der Abwesenheit",
+      "selectType": "Typ auswählen...",
+      "description": "Beschreibung",
+      "descriptionPlaceholder": "Optionale Beschreibung",
+      "totalDays": "Gesamttage",
+      "workdays": "Arbeitstage",
+      "vacationDaysUsed": "Urlaubstage verbraucht"
+    },
+    "actions": {
+      "cancel": "Abbrechen",
+      "save": "Speichern",
+      "add": "Abwesenheit hinzufügen"
+    },
+    "absenceTypes": {
+      "vacation": "Urlaub",
+      "businessTrip": "Dienstreise",
+      "sickLeave": "Krankmeldung"
+    }
   }
 }
