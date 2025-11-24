@@ -21,5 +21,30 @@
       "calendar": "Calendar",
       "timerecords": "Time Records"
     }
+  },
+  "HomePage": {
+    "terminal": {
+      "title": "Terminal",
+      "description": "Manage your session",
+      "active": "Active ({location}) since {time}",
+      "break": "Break",
+      "inactive": "Inactive",
+      "startWorkday": "Start Workday",
+      "pause": "Pause",
+      "endWorkday": "End Workday",
+      "inOffice": "In Office",
+      "remote": "Remote"
+    },
+    "vacation": {
+      "title": "Vacation",
+      "description": "Vacation info",
+      "entitlement": "vacation entitlement",
+      "taken": "vacation taken",
+      "planned": "vacation planned",
+      "remaining": "vacation remaining",
+      "days": "days",
+      "chartLabel": "Vacation Days",
+      "daysLeft": "Days Left"
+    }
   }
 }

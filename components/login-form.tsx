@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import { useTranslations } from "next-intl"
+import PasswordInput from "./ui/inputs/password-input"
 
 export function LoginForm({
     className,
@@ -31,7 +32,7 @@ export function LoginForm({
                 </Field>
                 <Field>
                     <FieldLabel htmlFor="password">{t('passwordLabel')}</FieldLabel>
-                    <Input id="password" type="password" required />
+                    <PasswordInput id="password" placeholder="******" required />
                 </Field>
                 <Field>
                     <Button type="submit">{t('loginButton')}</Button>
