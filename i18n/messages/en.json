@@ -82,5 +82,37 @@
       "businessTrip": "Business Trip",
       "sickLeave": "Sick Leave"
     }
+  },
+  "TimeRecordsPage": {
+    "title": "Time Records",
+    "period": "Period",
+    "addEntry": "Add Entry",
+    "save": "Save",
+    "discardChanges": "Discard Changes",
+    "table": {
+      "date": "Date",
+      "arrival": "Arrival",
+      "workLocation": "Work Location",
+      "departure": "Leave",
+      "remark": "Remark"
+    },
+    "workLocations": {
+      "office": "Office",
+      "remote": "Remote"
+    },
+    "breaks": {
+      "break": "Break",
+      "hasBreak": "Has Break"
+    },
+    "absenceTypes": {
+      "sickLeaveRequest": "Sick Leave Request",
+      "school": "School"
+    },
+    "remarks": {
+      "enterRemark": "Enter remark..."
+    },
+    "deleteEntry": "Delete Entry",
+    "undoDelete": "Undo",
+    "noRecords": "No time records for this period"
   }
 }
