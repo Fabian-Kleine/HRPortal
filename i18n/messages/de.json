@@ -82,5 +82,37 @@
       "businessTrip": "Dienstreise",
       "sickLeave": "Krankmeldung"
     }
+  },
+  "TimeRecordsPage": {
+    "title": "Zeiterfassung",
+    "period": "Zeitraum",
+    "addEntry": "Eintrag hinzufügen",
+    "save": "Speichern",
+    "discardChanges": "Änderungen verwerfen",
+    "table": {
+      "date": "Datum",
+      "arrival": "Kommen",
+      "workLocation": "Arbeitsort",
+      "departure": "Gehen",
+      "remark": "Bemerkung"
+    },
+    "workLocations": {
+      "office": "Büro",
+      "remote": "Remote"
+    },
+    "breaks": {
+      "break": "Pause",
+      "hasBreak": "Mit Pause"
+    },
+    "absenceTypes": {
+      "sickLeaveRequest": "Krank Anfrage eAU",
+      "school": "Schule"
+    },
+    "remarks": {
+      "enterRemark": "Bemerkung eingeben..."
+    },
+    "deleteEntry": "Eintrag löschen",
+    "undoDelete": "Rückgängig",
+    "noRecords": "Keine Zeiterfassungen für diesen Zeitraum"
   }
 }

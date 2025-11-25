@@ -52,7 +52,7 @@ export function FloatingButtons() {
                         <Button
                             variant="outline"
                             size="icon-lg"
-                            className="p-2"
+                            className="p-2 bg-background!"
                             onClick={() => handleLocaleToggle('en')}
                         >
                             <Image
@@ -67,7 +67,7 @@ export function FloatingButtons() {
                         <Button
                             variant="outline"
                             size="icon-lg"
-                            className="p-2"
+                            className="p-2 bg-background!"
                             onClick={() => handleLocaleToggle('de')}
                         >
                             <Image
@@ -84,7 +84,7 @@ export function FloatingButtons() {
                 <Button
                     variant="outline"
                     size="icon-lg"
-                    className="p-2"
+                    className="p-2 bg-background!"
                     onClick={() => setLocaleMenuOpen(!localeMenuOpen)}
                 >
                     <Globe />
@@ -96,6 +96,7 @@ export function FloatingButtons() {
                 onClick={handleThemeToggle}
                 variant="circle"
                 start="bottom-right"
+                className="p-2 bg-background!"
             />
         </div>
     );
