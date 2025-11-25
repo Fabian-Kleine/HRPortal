@@ -32,6 +32,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Plus, Save, Undo2, RotateCcw, X } from 'lucide-react';
 import { isWithinInterval, startOfDay, endOfDay } from 'date-fns';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 
 // Types
 interface TimeEntry {
@@ -451,15 +452,23 @@ export default function TimeRecordsPage() {
                                                     />
                                                 </TableCell>
                                                 <TableCell>
-                                                    <Button
-                                                        size="icon-sm"
-                                                        variant="ghost"
-                                                        onClick={() => handleDeleteEntry(entry.id)}
-                                                    >
-                                                        <X
-                                                            className="text-destructive"
-                                                        />
-                                                    </Button>
+                                                    <Tooltip>
+                                                        <TooltipTrigger asChild>
+                                                            <Button
+                                                                size="icon-sm"
+                                                                variant="ghost"
+                                                                onClick={() => handleDeleteEntry(entry.id)}
+                                                            >
+                                                                <X
+                                                                    className="text-destructive"
+                                                                />
+                                                                <span className="sr-only">{t('deleteEntry')}</span>
+                                                            </Button>
+                                                        </TooltipTrigger>
+                                                        <TooltipContent>
+                                                            <p>{t('deleteEntry')}</p>
+                                                        </TooltipContent>
+                                                    </Tooltip>
                                                 </TableCell>
                                             </TableRow>
                                         ))}
@@ -531,15 +540,23 @@ export default function TimeRecordsPage() {
                                             />
                                         </TableCell>
                                         <TableCell>
-                                            <Button
-                                                size="icon-sm"
-                                                variant="ghost"
-                                                onClick={() => handleDeleteEntry(entry.id)}
-                                            >
-                                                <X
-                                                    className="text-destructive"
-                                                />
-                                            </Button>
+                                            <Tooltip>
+                                                <TooltipTrigger asChild>
+                                                    <Button
+                                                        size="icon-sm"
+                                                        variant="ghost"
+                                                        onClick={() => handleDeleteEntry(entry.id)}
+                                                    >
+                                                        <X
+                                                            className="text-destructive"
+                                                        />
+                                                        <span className="sr-only">{t('deleteEntry')}</span>
+                                                    </Button>
+                                                </TooltipTrigger>
+                                                <TooltipContent>
+                                                    <p>{t('deleteEntry')}</p>
+                                                </TooltipContent>
+                                            </Tooltip>
                                         </TableCell>
                                     </TableRow>
                                 ))}
