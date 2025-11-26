@@ -88,7 +88,7 @@ export function LoginForm({
                     />
                 </Field>
                 <Field>
-                    <Button type="submit" disabled={isLoading}>
+                    <Button type="submit" isLoading={isLoading}>
                         {isLoading ? t('loggingIn') : t('loginButton')}
                     </Button>
                 </Field>
