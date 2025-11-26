@@ -8,7 +8,7 @@ import {
   House,
 } from "lucide-react"
 
-import { NavItems } from "@/components/nav/nav-items"
+import { NavItems, type NavItemT } from "@/components/nav/nav-items"
 import { NavUser } from "@/components/nav/nav-user"
 import {
   Sidebar,
@@ -23,38 +23,36 @@ import {
 import { usePathname } from "next/navigation"
 import { useTranslations } from "next-intl"
 
-
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const t = useTranslations("AppSidebar");
   const pathname = usePathname();
 
-  const data = {
-    user: {
-      name: "shadcn",
-      email: "m@example.com",
-      avatar: "/avatars/shadcn.jpg",
-    },
-    navItems: [
-      {
-        title: t('home'),
-        url: "/hrportal/home",
-        icon: House,
-        isActive: pathname === "/hrportal/home",
-      },
-      {
-        title: t('calendar'),
-        url: "/hrportal/calendar",
-        icon: CalendarDays,
-        isActive: pathname === "/hrportal/calendar",
-      },
-      {
-        title: t('timeRecords'),
-        url: "/hrportal/timerecords",
-        icon: CalendarClock,
-        isActive: pathname === "/hrportal/timerecords",
-      },
-    ],
+  const userData = {
+    name: "shadcn",
+    email: "m@example.com",
+    avatar: "/avatars/shadcn.jpg",
   }
+
+  const navItems: NavItemT[] = [
+    {
+      title: t('home'),
+      url: "/hrportal/home",
+      icon: House,
+      isActive: pathname === "/hrportal/home",
+    },
+    {
+      title: t('calendar'),
+      url: "/hrportal/calendar",
+      icon: CalendarDays,
+      isActive: pathname === "/hrportal/calendar",
+    },
+    {
+      title: t('timeRecords'),
+      url: "/hrportal/timerecords",
+      icon: CalendarClock,
+      isActive: pathname === "/hrportal/timerecords",
+    },
+  ];
 
   return (
     <Sidebar collapsible="icon" {...props}>
@@ -76,10 +74,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavItems items={data.navItems} label="Navigation" />
+        <NavItems items={navItems} label="Navigation" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={userData} />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
