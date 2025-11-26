@@ -5,13 +5,16 @@ import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import React from "react";
+import { Route } from "next";
 
 export default function NavBreadcrumb() {
     const t = useTranslations("NavBreadcrumb");
     const pathname = usePathname();
 
+    const subpath = pathname.includes("hrportal") ? "hrportal" : "hrmanager";
+
     const segments = pathname
-        .replace(/^\/hrportal/, "")
+        .replace(new RegExp(`^/${subpath}`), "")
         .split("/")
         .filter(Boolean);
 
@@ -33,7 +36,7 @@ export default function NavBreadcrumb() {
                         <React.Fragment key={href}>
                             <BreadcrumbItem>
                                 <BreadcrumbLink asChild>
-                                    <Link href={href}>{t(`items.${segment}`)}</Link>
+                                    <Link href={href as Route}>{t(`items.${segment}`)}</Link>
                                 </BreadcrumbLink>
                             </BreadcrumbItem>
                             {index < segments.length - 1 && (

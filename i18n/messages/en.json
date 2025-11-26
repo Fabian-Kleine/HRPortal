@@ -1,4 +1,140 @@
 {
+  "HRManager": {
+    "employees": {
+      "title": "Employees",
+      "description": "Manage employee accounts and their settings.",
+      "addEmployee": "Add Employee",
+      "searchPlaceholder": "Search employees...",
+      "noEmployees": "No employees found",
+      "table": {
+        "employeeNumber": "Employee #",
+        "name": "Name",
+        "email": "Email",
+        "group": "Group",
+        "role": "Role",
+        "actions": "Actions"
+      },
+      "roles": {
+        "admin": "Admin",
+        "user": "User"
+      },
+      "noGroup": "—",
+      "dialog": {
+        "addTitle": "Add Employee",
+        "editTitle": "Edit Employee",
+        "addDescription": "Create a new employee account.",
+        "editDescription": "Update employee information and settings.",
+        "personalInfo": "Personal Information",
+        "workSettings": "Work Settings",
+        "name": "Name",
+        "namePlaceholder": "John Doe",
+        "employeeNumber": "Employee Number",
+        "employeeNumberPlaceholder": "EMP-001",
+        "email": "Email Address",
+        "emailPlaceholder": "john.doe@company.com",
+        "initialPassword": "Initial Password",
+        "initialPasswordDescription": "Set the initial password for the employee",
+        "passwordPlaceholder": "••••••••",
+        "password": "Password",
+        "passwordResetDescription": "You can reset the employee's password if needed",
+        "resetPassword": "Reset Password",
+        "group": "Employee Group",
+        "groupDescription": "Assign employee to a group (optional)",
+        "selectGroup": "Select group...",
+        "noGroupOption": "No Group",
+        "isAdmin": "Administrator",
+        "isAdminDescription": "Grant admin access to HR management",
+        "overrideSettings": "Override Settings",
+        "overrideSettingsDescription": "By default, employees inherit settings from their group or the default settings.",
+        "usingDefaultSettings": "This employee will use settings from their group or the default settings.",
+        "cancel": "Cancel",
+        "save": "Save Changes",
+        "create": "Create Employee"
+      },
+      "deleteDialog": {
+        "title": "Delete Employee",
+        "description": "Are you sure you want to delete \"{name}\"? This action cannot be undone."
+      },
+      "passwordResetSuccess": "Password reset link has been sent to the user's email."
+    },
+    "groups": {
+      "title": "Employee Groups",
+      "description": "Manage employee groups and their default settings.",
+      "addGroup": "Add Group",
+      "searchPlaceholder": "Search groups...",
+      "noGroups": "No groups found",
+      "table": {
+        "name": "Name",
+        "members": "Members",
+        "vacationDays": "Vacation Days",
+        "dailyHours": "Daily Hours",
+        "holidayRegion": "Holiday Region",
+        "flextime": "Flextime",
+        "remote": "Remote",
+        "actions": "Actions"
+      },
+      "dialog": {
+        "addTitle": "Add Employee Group",
+        "editTitle": "Edit Employee Group",
+        "addDescription": "Create a new employee group with default settings.",
+        "editDescription": "Update group settings. Changes will apply to all members.",
+        "groupInfo": "Group Information",
+        "groupSettings": "Group Work Settings",
+        "groupSettingsDescription": "These settings serve as defaults for all members of this group.",
+        "name": "Group Name",
+        "namePlaceholder": "e.g., Engineering, Sales, HR",
+        "cancel": "Cancel",
+        "save": "Save Changes",
+        "create": "Create Group"
+      },
+      "deleteDialog": {
+        "title": "Delete Group",
+        "description": "Are you sure you want to delete \"{name}\"? Members will be unassigned from this group. This action cannot be undone."
+      }
+    },
+    "settings": {
+      "title": "Default Employee Settings",
+      "description": "Configure the default settings that will be applied to new employees. These settings can be overridden at the group level or for individual employees.",
+      "resetToDefaults": "Reset to Defaults",
+      "discardChanges": "Discard Changes",
+      "save": "Save Settings",
+      "saving": "Saving...",
+      "vacationDays": "Vacation Days",
+      "vacationDaysDescription": "Annual vacation entitlement in days",
+      "dailyHours": "Daily Hours (Average)",
+      "dailyHoursDescription": "Average working hours per day",
+      "minBreakTime": "Minimum Break Time",
+      "minBreakTimeDescription": "Minimum break time in minutes",
+      "holidayCountry": "Holiday Country",
+      "holidayCountryDescription": "Country for public holidays",
+      "selectCountry": "Select country...",
+      "holidayState": "Holiday State/Region",
+      "holidayStateDescription": "State or region for more specific holidays (optional)",
+      "selectState": "Select state...",
+      "countryWide": "Country-wide (no specific state)",
+      "hasFlextime": "Flextime",
+      "hasFlextimeDescription": "Allow flexible working hours",
+      "canWorkRemote": "Remote Work",
+      "canWorkRemoteDescription": "Allow working from home",
+      "canSelfApprove": "Self-Approve Entries",
+      "canSelfApproveDescription": "Allow self-approval of calendar entries",
+      "hierarchy": {
+        "title": "Settings Hierarchy",
+        "description": "Understand how settings are applied to employees.",
+        "default": "Default Settings",
+        "defaultDescription": "The base settings configured on this page. Applied when no group or individual settings exist.",
+        "group": "Group Settings",
+        "groupDescription": "Settings configured for employee groups. Override default settings for all group members.",
+        "individual": "Individual Settings",
+        "individualDescription": "Settings configured for individual employees. Have the highest priority and override both default and group settings."
+      }
+    },
+    "common": {
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "edit": "Edit"
+    }
+  },
   "LoginForm": {
     "title": "Login to your account",
     "subtitle": "Enter your email below to login to your account",
@@ -9,9 +145,14 @@
   },
   "AppSidebar": {
     "navigation": "Navigation",
+    "hrManagement": "HR Management",
     "home": "Home",
     "calendar": "Calendar",
     "timeRecords": "Time Records",
+    "employees": "Employees",
+    "employeeGroups": "Employee Groups",
+    "requests": "Requests",
+    "employeeSettings": "Employee Settings",
     "settings": "Settings",
     "logout": "Log out"
   },
@@ -19,7 +160,11 @@
     "items": {
       "home": "Home",
       "calendar": "Calendar",
-      "timerecords": "Time Records"
+      "timerecords": "Time Records",
+      "employees": "Employees",
+      "employee-groups": "Employee Groups",
+      "requests": "Requests",
+      "employeeSettings": "Employee Settings"
     }
   },
   "FloatingButtons": {

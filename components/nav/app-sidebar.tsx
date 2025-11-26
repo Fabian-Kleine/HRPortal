@@ -3,12 +3,15 @@
 import * as React from "react"
 import {
   BookUser,
+  CalendarCheck,
   CalendarClock,
   CalendarDays,
   House,
+  Settings2,
+  Users,
 } from "lucide-react"
 
-import { NavItems, type NavItemT } from "@/components/nav/nav-items"
+import { NavItems, type NavItemGroupT } from "@/components/nav/nav-items"
 import { NavUser } from "@/components/nav/nav-user"
 import {
   Sidebar,
@@ -33,25 +36,59 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     avatar: "/avatars/shadcn.jpg",
   }
 
-  const navItems: NavItemT[] = [
+  const navItemGroups: NavItemGroupT[] = [
     {
-      title: t('home'),
-      url: "/hrportal/home",
-      icon: House,
-      isActive: pathname === "/hrportal/home",
+      label: t('navigation'),
+      items: [
+        {
+          title: t('home'),
+          url: "/hrportal/home",
+          icon: House,
+          isActive: pathname === "/hrportal/home",
+        },
+        {
+          title: t('calendar'),
+          url: "/hrportal/calendar",
+          icon: CalendarDays,
+          isActive: pathname === "/hrportal/calendar",
+        },
+        {
+          title: t('timeRecords'),
+          url: "/hrportal/timerecords",
+          icon: CalendarClock,
+          isActive: pathname === "/hrportal/timerecords",
+        },
+      ]
     },
     {
-      title: t('calendar'),
-      url: "/hrportal/calendar",
-      icon: CalendarDays,
-      isActive: pathname === "/hrportal/calendar",
-    },
-    {
-      title: t('timeRecords'),
-      url: "/hrportal/timerecords",
-      icon: CalendarClock,
-      isActive: pathname === "/hrportal/timerecords",
-    },
+      label: t('hrManagement'),
+      items: [
+        {
+          title: t('employees'),
+          url: "/hrmanager/employees",
+          icon: BookUser,
+          isActive: pathname === "/hrmanager/employees",
+        },
+        {
+          title: t('employeeGroups'),
+          url: "/hrmanager/employee-groups",
+          icon: Users,
+          isActive: pathname === "/hrmanager/employee-groups",
+        },
+        {
+          title: t('requests'),
+          url: "/hrmanager/requests",
+          icon: CalendarCheck,
+          isActive: pathname === "/hrmanager/requests",
+        },
+        {
+          title: t('employeeSettings'),
+          url: "/hrmanager/employee-settings",
+          icon: Settings2,
+          isActive: pathname === "/hrmanager/employee-settings",
+        }
+      ]
+    }
   ];
 
   return (
@@ -74,7 +111,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent>
-        <NavItems items={navItems} label="Navigation" />
+        <NavItems groups={navItemGroups} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={userData} />
