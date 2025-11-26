@@ -6,13 +6,14 @@ import { auth } from "@/lib/auth";
 import { getEmployeeSettings } from "@/lib/db";
 import { calculateMonthlyWorkingHours, hourDecimalToHoursMinutes } from "@/lib/date";
 import { getTranslations } from "next-intl/server";
+import { redirect } from "next/navigation";
 
 export default async function HomePage() {
     const session = await auth();
     const t = await getTranslations("HomePage");
 
     if (!session?.user) {
-        throw new Error("Unauthorized");
+        redirect("/");
     }
 
     const employeeSettings = await getEmployeeSettings(session.user.id);

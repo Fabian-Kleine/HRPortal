@@ -4,6 +4,7 @@ import { prisma } from "@/lib/db"
 import { auth } from "@/lib/auth"
 import bcrypt from "bcryptjs"
 import { revalidatePath } from "next/cache"
+import { redirect } from "next/navigation"
 
 export type EmployeeWithRelations = Awaited<ReturnType<typeof getEmployees>>[number]
 
@@ -12,7 +13,7 @@ export async function getEmployees() {
     const session = await auth()
     
     if (!session?.user?.isAdmin) {
-        throw new Error("Unauthorized")
+        redirect("/");
     }
 
     const employees = await prisma.employee.findMany({
@@ -34,7 +35,7 @@ export async function getEmployee(id: string) {
     const session = await auth()
     
     if (!session?.user?.isAdmin && session?.user?.id !== id) {
-        throw new Error("Unauthorized")
+        redirect("/");
     }
 
     const employee = await prisma.employee.findUnique({
@@ -78,7 +79,7 @@ export async function createEmployee(data: {
     const session = await auth()
     
     if (!session?.user?.isAdmin) {
-        throw new Error("Unauthorized")
+        redirect("/");
     }
 
     const {
@@ -172,7 +173,7 @@ export async function updateEmployee(
     const session = await auth()
     
     if (!session?.user?.isAdmin) {
-        throw new Error("Unauthorized")
+        redirect("/");
     }
 
     const {
@@ -270,7 +271,7 @@ export async function deleteEmployee(id: string) {
     const session = await auth()
     
     if (!session?.user?.isAdmin) {
-        throw new Error("Unauthorized")
+        redirect("/");
     }
 
     // First delete associated settings if they exist
@@ -303,7 +304,7 @@ export async function resetEmployeePassword(id: string, newPassword: string) {
     const session = await auth()
     
     if (!session?.user?.isAdmin) {
-        throw new Error("Unauthorized")
+        redirect("/");
     }
 
     if (!newPassword) {
