@@ -5,6 +5,7 @@ import { ButtonGroup, ButtonGroupSeparator } from "@/components/ui/button-group"
 import { Item, ItemActions, ItemContent, ItemDescription, ItemTitle } from "@/components/ui/item";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { EmployeeSettings } from "@prisma/client";
 import { Building2, House, Pause, Play, Square } from "lucide-react";
 import { useTranslations, useFormatter, type DateTimeFormatOptions } from "next-intl";
 import { useState, useEffect } from "react";
@@ -36,7 +37,11 @@ const timeOptions: DateTimeFormatOptions = {
     minute: 'numeric',
 };
 
-export default function SessionTerminal() {
+interface SessionTerminalProps {
+    employeeSettings: EmployeeSettings;
+}
+
+export default function SessionTerminal({ employeeSettings }: SessionTerminalProps) {
     const t = useTranslations("HomePage");
     const f = useFormatter();
 
@@ -120,43 +125,45 @@ export default function SessionTerminal() {
                         </TooltipContent>
                     </Tooltip>
                 </ButtonGroup>
-                <ButtonGroup>
-                    <Tooltip>
-                        <TooltipTrigger asChild>
-                            <Button
-                                variant={workLocation === 'inOffice' ? "default" : "outline"}
-                                size="lg"
-                                className="rounded-md"
-                                onClick={() => setWorkLocation('inOffice')}
-                                disabled={workLocation === 'inOffice' || acitivity === 'active'}
-                            >
-                                <Building2 />
-                                <span className="sr-only">{t('terminal.inOffice')}</span>
-                            </Button>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                            <p>{t('terminal.inOffice')}</p>
-                        </TooltipContent>
-                    </Tooltip>
-                    <ButtonGroupSeparator />
-                    <Tooltip>
-                        <TooltipTrigger asChild>
-                            <Button
-                                variant={workLocation === 'remote' ? "default" : "outline"}
-                                size="lg"
-                                className="rounded-md"
-                                onClick={() => setWorkLocation('remote')}
-                                disabled={workLocation === 'remote' || acitivity === 'active'}
-                            >
-                                <House />
-                                <span className="sr-only">{t('terminal.remote')}</span>
-                            </Button>
-                        </TooltipTrigger>
-                        <TooltipContent>
-                            <p>{t('terminal.remote')}</p>
-                        </TooltipContent>
-                    </Tooltip>
-                </ButtonGroup>
+                {employeeSettings.canWorkRemote && (
+                    <ButtonGroup>
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <Button
+                                    variant={workLocation === 'inOffice' ? "default" : "outline"}
+                                    size="lg"
+                                    className="rounded-md"
+                                    onClick={() => setWorkLocation('inOffice')}
+                                    disabled={workLocation === 'inOffice' || acitivity === 'active'}
+                                >
+                                    <Building2 />
+                                    <span className="sr-only">{t('terminal.inOffice')}</span>
+                                </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>{t('terminal.inOffice')}</p>
+                            </TooltipContent>
+                        </Tooltip>
+                        <ButtonGroupSeparator />
+                        <Tooltip>
+                            <TooltipTrigger asChild>
+                                <Button
+                                    variant={workLocation === 'remote' ? "default" : "outline"}
+                                    size="lg"
+                                    className="rounded-md"
+                                    onClick={() => setWorkLocation('remote')}
+                                    disabled={workLocation === 'remote' || acitivity === 'active'}
+                                >
+                                    <House />
+                                    <span className="sr-only">{t('terminal.remote')}</span>
+                                </Button>
+                            </TooltipTrigger>
+                            <TooltipContent>
+                                <p>{t('terminal.remote')}</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </ButtonGroup>
+                )}
             </ItemActions>
         </Item>
     );

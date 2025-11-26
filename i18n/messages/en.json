@@ -225,7 +225,8 @@
       "descriptionPlaceholder": "Optional description",
       "totalDays": "Total Days",
       "workdays": "Workdays",
-      "vacationDaysUsed": "Vacation Days Used"
+      "vacationDaysUsed": "Vacation Days Used",
+      "vacationDaysLeft": "Vacation Days Left"
     },
     "actions": {
       "cancel": "Cancel",
@@ -234,8 +235,12 @@
     },
     "absenceTypes": {
       "vacation": "Vacation",
+      "vacationHalfDayMorning": "Half-Day Vacation (Morning)",
+      "vacationHalfDayAfternoon": "Half-Day Vacation (Afternoon)",
       "businessTrip": "Business Trip",
-      "sickLeave": "Sick Leave"
+      "sickLeave": "Sick Leave",
+      "holiday": "Holiday",
+      "requested": "Requested"
     }
   },
   "TimeRecordsPage": {
