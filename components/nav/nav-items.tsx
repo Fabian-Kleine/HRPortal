@@ -10,19 +10,29 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import Link from "next/link"
+import { Route } from "next"
 
-export function NavItems({
-  items,
-  label,
-}: {
+export interface NavItemT {
+  title: string
+  url: Route
+  icon?: LucideIcon
+  isActive?: boolean
+}
+
+interface NavItemsProps {
   items: {
     title: string
-    url: string
+    url: Route
     icon?: LucideIcon
     isActive?: boolean
   }[]
   label?: string
-}) {
+}
+
+export function NavItems({
+  items,
+  label,
+}: NavItemsProps) {
   return (
     <SidebarGroup>
       {label && <SidebarGroupLabel>{label}</SidebarGroupLabel>}

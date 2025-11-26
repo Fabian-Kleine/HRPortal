@@ -19,7 +19,7 @@ export default function NavBreadcrumb() {
         <Breadcrumb>
             <BreadcrumbList>
                 <BreadcrumbItem>
-                    HR Portal
+                   {pathname.includes("hrportal") ? "HR Portal" : "HR Managemer"}
                 </BreadcrumbItem>
 
                 {segments.length > 0 && (
