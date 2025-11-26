@@ -48,6 +48,13 @@
       "days": "Tage",
       "chartLabel": "Urlaubstage",
       "daysLeft": "Tage übrig"
+    },
+    "timeaccounts": {
+      "title": "Zeitkonten",
+      "description": "Übersicht Ihrer Zeitkonten",
+      "flextime": "Gleitzeit",
+      "worktime": "Arbeitszeit",
+      "targettime": "Sollzeit"
     }
   },
   "CalendarPage": {

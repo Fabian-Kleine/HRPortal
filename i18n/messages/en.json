@@ -48,6 +48,13 @@
       "days": "days",
       "chartLabel": "Vacation Days",
       "daysLeft": "Days Left"
+    },
+    "timeaccounts": {
+      "title": "Time Accounts",
+      "description": "Overview of your time accounts",
+      "flextime": "Flextime",
+      "worktime": "Worktime",
+      "targettime": "Target Time"
     }
   },
   "CalendarPage": {

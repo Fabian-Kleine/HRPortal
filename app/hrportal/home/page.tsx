@@ -1,6 +1,7 @@
 import { ChartRadialText } from "@/components/charts/chart-radial-text";
 import SessionTerminal from "@/components/session-terminal";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { getTranslations } from "next-intl/server";
 
 export default async function HomePage() {
@@ -11,7 +12,7 @@ export default async function HomePage() {
             <Card className="col-span-2 row-span-1">
                 <CardHeader>
                     <CardTitle>{t('terminal.title')}</CardTitle>
-                    <CardDescription>{t('terminal.description')}</CardDescription>
+                    <CardDescription className="sr-only">{t('terminal.description')}</CardDescription>
                 </CardHeader>
                 <CardContent>
                     <SessionTerminal />
@@ -55,6 +56,28 @@ export default async function HomePage() {
                         text={{ value: "18", label: t('vacation.daysLeft') }}
                         className="ml-auto mx-0"
                     />
+                </CardContent>
+            </Card>
+            <Card className="col-span-2 row-span-1">
+                <CardHeader>
+                    <CardTitle>{t('timeaccounts.title')}</CardTitle>
+                    <CardDescription className="sr-only">{t('timeaccounts.description')}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                    <div className="flex justify-between">
+                        <p>{t('timeaccounts.flextime')}</p>
+                        <p>01:43 h</p>
+                    </div>
+                    <Separator className="my-2" />
+                    <div className="flex justify-between">
+                        <p>{t('timeaccounts.worktime')}</p>
+                        <p>136:22 h</p>
+                    </div>
+                    <Separator className="my-2" />
+                    <div className="flex justify-between">
+                        <p>{t('timeaccounts.targettime')}</p>
+                        <p>136:00 h</p>
+                    </div>
                 </CardContent>
             </Card>
         </div>
