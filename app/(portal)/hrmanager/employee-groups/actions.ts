@@ -3,6 +3,7 @@
 import { prisma } from "@/lib/db"
 import { auth } from "@/lib/auth"
 import { revalidatePath } from "next/cache"
+import { redirect } from "next/navigation"
 
 export type EmployeeGroupWithRelations = Awaited<ReturnType<typeof getEmployeeGroups>>[number]
 
@@ -11,7 +12,7 @@ export async function getEmployeeGroups() {
     const session = await auth()
     
     if (!session?.user?.isAdmin) {
-        throw new Error("Unauthorized")
+        redirect("/");
     }
 
     const groups = await prisma.employeeGroup.findMany({
@@ -34,7 +35,7 @@ export async function getEmployeeGroup(id: string) {
     const session = await auth()
     
     if (!session?.user?.isAdmin) {
-        throw new Error("Unauthorized")
+        redirect("/");
     }
 
     const group = await prisma.employeeGroup.findUnique({
@@ -76,7 +77,7 @@ export async function createEmployeeGroup(data: {
     const session = await auth()
     
     if (!session?.user?.isAdmin) {
-        throw new Error("Unauthorized")
+        redirect("/");
     }
 
     const {
@@ -136,7 +137,7 @@ export async function updateEmployeeGroup(
     const session = await auth()
     
     if (!session?.user?.isAdmin) {
-        throw new Error("Unauthorized")
+        redirect("/");
     }
 
     const {
@@ -212,7 +213,7 @@ export async function deleteEmployeeGroup(id: string) {
     const session = await auth()
     
     if (!session?.user?.isAdmin) {
-        throw new Error("Unauthorized")
+        redirect("/");
     }
 
     // Get the group with its settings
