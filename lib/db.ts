@@ -1,14 +1,16 @@
 import { PrismaClient } from "@prisma/client/edge";
-import { PrismaPostgresAdapter } from '@prisma/adapter-ppg'
+import { withAccelerate } from "@prisma/extension-accelerate";
 
-const connectionString = process.env.DATABASE_URL || "";
+const prismaClientSingleton = () => {
+    return new PrismaClient().$extends(withAccelerate());
+};
 
-const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
- 
-export const prisma = globalForPrisma.prisma || new PrismaClient({
-    adapter: new PrismaPostgresAdapter({
-        connectionString,
-    })
-});
- 
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+type PrismaClientSingleton = ReturnType<typeof prismaClientSingleton>;
+
+const globalForPrisma = globalThis as unknown as {
+    prisma: PrismaClientSingleton | undefined;
+};
+
+export const prisma: PrismaClientSingleton = globalForPrisma.prisma ?? prismaClientSingleton();
+
+if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;

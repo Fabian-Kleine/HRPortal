@@ -1,14 +1,7 @@
-import { PrismaPostgresAdapter } from '@prisma/adapter-ppg'
 import { PrismaClient } from "@prisma/client"
 import * as bcrypt from "bcryptjs"
 
-const connectionString = process.env.DATABASE_URL || "";
-
-const prisma = new PrismaClient({
-    adapter: new PrismaPostgresAdapter({
-        connectionString,
-    })
-})
+const prisma = new PrismaClient();
 
 async function main() {
     console.log("🌱 Starting seed...")
