@@ -225,7 +225,8 @@
       "descriptionPlaceholder": "Optionale Beschreibung",
       "totalDays": "Gesamttage",
       "workdays": "Arbeitstage",
-      "vacationDaysUsed": "Urlaubstage verbraucht"
+      "vacationDaysUsed": "Urlaubstage verbraucht",
+      "vacationDaysLeft": "Verbleibende Urlaubstage"
     },
     "actions": {
       "cancel": "Abbrechen",
@@ -234,8 +235,12 @@
     },
     "absenceTypes": {
       "vacation": "Urlaub",
+      "vacationHalfDayMorning": "Halber Urlaub (Vormittag)",
+      "vacationHalfDayAfternoon": "Halber Urlaub (Nachmittag)",
       "businessTrip": "Dienstreise",
-      "sickLeave": "Krankmeldung"
+      "sickLeave": "Krankmeldung",
+      "holiday": "Feiertag",
+      "requested": "Angefragt"
     }
   },
   "TimeRecordsPage": {
