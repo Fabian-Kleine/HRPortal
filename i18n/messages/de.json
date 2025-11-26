@@ -141,7 +141,10 @@
     "emailLabel": "E-Mail",
     "emailPlaceholder": "m@beispiel.de",
     "passwordLabel": "Passwort",
-    "loginButton": "Anmelden"
+    "loginButton": "Anmelden",
+    "loggingIn": "Anmelden...",
+    "invalidCredentials": "Ungültige E-Mail oder Passwort",
+    "loginError": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut."
   },
   "AppSidebar": {
     "navigation": "Navigation",
