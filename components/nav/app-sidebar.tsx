@@ -25,16 +25,49 @@ import {
 } from "@/components/ui/sidebar"
 import { usePathname } from "next/navigation"
 import { useTranslations } from "next-intl"
+import { useSession } from "next-auth/react"
+import { Route } from "next"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const t = useTranslations("AppSidebar");
   const pathname = usePathname();
+  const { data: session } = useSession();
 
   const userData = {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: session?.user?.name || "User",
+    email: session?.user?.email || "",
+    avatar: session?.user?.image || "",
   }
+
+  const hrManagementGroup: NavItemGroupT = {
+    label: t('hrManagement'),
+    items: [
+      {
+        title: t('employees'),
+        url: "/hrmanager/employees" as Route,
+        icon: BookUser,
+        isActive: pathname === "/hrmanager/employees",
+      },
+      {
+        title: t('employeeGroups'),
+        url: "/hrmanager/employee-groups" as Route,
+        icon: Users,
+        isActive: pathname === "/hrmanager/employee-groups",
+      },
+      {
+        title: t('requests'),
+        url: "/hrmanager/requests" as Route,
+        icon: CalendarCheck,
+        isActive: pathname === "/hrmanager/requests",
+      },
+      {
+        title: t('employeeSettings'),
+        url: "/hrmanager/employee-settings" as Route,
+        icon: Settings2,
+        isActive: pathname === "/hrmanager/employee-settings",
+      }
+    ]
+  };
 
   const navItemGroups: NavItemGroupT[] = [
     {
@@ -42,53 +75,25 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       items: [
         {
           title: t('home'),
-          url: "/hrportal/home",
+          url: "/hrportal/home" as Route,
           icon: House,
           isActive: pathname === "/hrportal/home",
         },
         {
           title: t('calendar'),
-          url: "/hrportal/calendar",
+          url: "/hrportal/calendar" as Route,
           icon: CalendarDays,
           isActive: pathname === "/hrportal/calendar",
         },
         {
           title: t('timeRecords'),
-          url: "/hrportal/timerecords",
+          url: "/hrportal/timerecords" as Route,
           icon: CalendarClock,
           isActive: pathname === "/hrportal/timerecords",
         },
       ]
     },
-    {
-      label: t('hrManagement'),
-      items: [
-        {
-          title: t('employees'),
-          url: "/hrmanager/employees",
-          icon: BookUser,
-          isActive: pathname === "/hrmanager/employees",
-        },
-        {
-          title: t('employeeGroups'),
-          url: "/hrmanager/employee-groups",
-          icon: Users,
-          isActive: pathname === "/hrmanager/employee-groups",
-        },
-        {
-          title: t('requests'),
-          url: "/hrmanager/requests",
-          icon: CalendarCheck,
-          isActive: pathname === "/hrmanager/requests",
-        },
-        {
-          title: t('employeeSettings'),
-          url: "/hrmanager/employee-settings",
-          icon: Settings2,
-          isActive: pathname === "/hrmanager/employee-settings",
-        }
-      ]
-    }
+    ...(session?.user?.isAdmin ? [hrManagementGroup] : [])
   ];
 
   return (
