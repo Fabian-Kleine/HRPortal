@@ -1,4 +1,140 @@
 {
+  "HRManager": {
+    "employees": {
+      "title": "Mitarbeiter",
+      "description": "Mitarbeiterkonten und deren Einstellungen verwalten.",
+      "addEmployee": "Mitarbeiter hinzufügen",
+      "searchPlaceholder": "Mitarbeiter suchen...",
+      "noEmployees": "Keine Mitarbeiter gefunden",
+      "table": {
+        "employeeNumber": "Mitarbeiter-Nr.",
+        "name": "Name",
+        "email": "E-Mail",
+        "group": "Gruppe",
+        "role": "Rolle",
+        "actions": "Aktionen"
+      },
+      "roles": {
+        "admin": "Admin",
+        "user": "Benutzer"
+      },
+      "noGroup": "—",
+      "dialog": {
+        "addTitle": "Mitarbeiter hinzufügen",
+        "editTitle": "Mitarbeiter bearbeiten",
+        "addDescription": "Erstellen Sie ein neues Mitarbeiterkonto.",
+        "editDescription": "Mitarbeiterinformationen und Einstellungen aktualisieren.",
+        "personalInfo": "Persönliche Informationen",
+        "workSettings": "Arbeitseinstellungen",
+        "name": "Name",
+        "namePlaceholder": "Max Mustermann",
+        "employeeNumber": "Mitarbeiternummer",
+        "employeeNumberPlaceholder": "MA-001",
+        "email": "E-Mail-Adresse",
+        "emailPlaceholder": "max.mustermann@firma.de",
+        "initialPassword": "Initiales Passwort",
+        "initialPasswordDescription": "Legen Sie das initiale Passwort für den Mitarbeiter fest",
+        "passwordPlaceholder": "••••••••",
+        "password": "Passwort",
+        "passwordResetDescription": "Sie können das Passwort des Mitarbeiters bei Bedarf zurücksetzen",
+        "resetPassword": "Passwort zurücksetzen",
+        "group": "Mitarbeitergruppe",
+        "groupDescription": "Mitarbeiter einer Gruppe zuweisen (optional)",
+        "selectGroup": "Gruppe auswählen...",
+        "noGroupOption": "Keine Gruppe",
+        "isAdmin": "Administrator",
+        "isAdminDescription": "Administratorzugang zur Personalverwaltung gewähren",
+        "overrideSettings": "Einstellungen überschreiben",
+        "overrideSettingsDescription": "Standardmäßig übernehmen Mitarbeiter die Einstellungen ihrer Gruppe oder die Standardeinstellungen.",
+        "usingDefaultSettings": "Dieser Mitarbeiter verwendet die Einstellungen seiner Gruppe oder die Standardeinstellungen.",
+        "cancel": "Abbrechen",
+        "save": "Änderungen speichern",
+        "create": "Mitarbeiter erstellen"
+      },
+      "deleteDialog": {
+        "title": "Mitarbeiter löschen",
+        "description": "Sind Sie sicher, dass Sie \"{name}\" löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden."
+      },
+      "passwordResetSuccess": "Der Link zum Zurücksetzen des Passworts wurde an die E-Mail des Benutzers gesendet."
+    },
+    "groups": {
+      "title": "Mitarbeitergruppen",
+      "description": "Mitarbeitergruppen und deren Standardeinstellungen verwalten.",
+      "addGroup": "Gruppe hinzufügen",
+      "searchPlaceholder": "Gruppen suchen...",
+      "noGroups": "Keine Gruppen gefunden",
+      "table": {
+        "name": "Name",
+        "members": "Mitglieder",
+        "vacationDays": "Urlaubstage",
+        "dailyHours": "Tägliche Stunden",
+        "holidayRegion": "Feiertagsregion",
+        "flextime": "Gleitzeit",
+        "remote": "Remote",
+        "actions": "Aktionen"
+      },
+      "dialog": {
+        "addTitle": "Mitarbeitergruppe hinzufügen",
+        "editTitle": "Mitarbeitergruppe bearbeiten",
+        "addDescription": "Erstellen Sie eine neue Mitarbeitergruppe mit Standardeinstellungen.",
+        "editDescription": "Gruppeneinstellungen aktualisieren. Änderungen gelten für alle Mitglieder.",
+        "groupInfo": "Gruppeninformationen",
+        "groupSettings": "Gruppenarbeitseinstellungen",
+        "groupSettingsDescription": "Diese Einstellungen dienen als Standard für alle Mitglieder dieser Gruppe.",
+        "name": "Gruppenname",
+        "namePlaceholder": "z.B. Entwicklung, Vertrieb, Personal",
+        "cancel": "Abbrechen",
+        "save": "Änderungen speichern",
+        "create": "Gruppe erstellen"
+      },
+      "deleteDialog": {
+        "title": "Gruppe löschen",
+        "description": "Sind Sie sicher, dass Sie \"{name}\" löschen möchten? Mitglieder werden aus dieser Gruppe entfernt. Diese Aktion kann nicht rückgängig gemacht werden."
+      }
+    },
+    "settings": {
+      "title": "Standard-Mitarbeitereinstellungen",
+      "description": "Konfigurieren Sie die Standardeinstellungen, die auf neue Mitarbeiter angewendet werden. Diese Einstellungen können auf Gruppenebene oder für einzelne Mitarbeiter überschrieben werden.",
+      "resetToDefaults": "Auf Standard zurücksetzen",
+      "discardChanges": "Änderungen verwerfen",
+      "save": "Einstellungen speichern",
+      "saving": "Speichern...",
+      "vacationDays": "Urlaubstage",
+      "vacationDaysDescription": "Jährlicher Urlaubsanspruch in Tagen",
+      "dailyHours": "Tägliche Stunden (Durchschnitt)",
+      "dailyHoursDescription": "Durchschnittliche Arbeitsstunden pro Tag",
+      "minBreakTime": "Minimale Pausenzeit",
+      "minBreakTimeDescription": "Minimale Pausenzeit in Minuten",
+      "holidayCountry": "Feiertagsland",
+      "holidayCountryDescription": "Land für gesetzliche Feiertage",
+      "selectCountry": "Land auswählen...",
+      "holidayState": "Feiertagsbundesland/-region",
+      "holidayStateDescription": "Bundesland oder Region für spezifischere Feiertage (optional)",
+      "selectState": "Bundesland auswählen...",
+      "countryWide": "Landesweit (kein spezifisches Bundesland)",
+      "hasFlextime": "Gleitzeit",
+      "hasFlextimeDescription": "Flexible Arbeitszeiten erlauben",
+      "canWorkRemote": "Remote-Arbeit",
+      "canWorkRemoteDescription": "Arbeit von zu Hause erlauben",
+      "canSelfApprove": "Selbstgenehmigung",
+      "canSelfApproveDescription": "Selbstgenehmigung von Kalendereinträgen erlauben",
+      "hierarchy": {
+        "title": "Einstellungshierarchie",
+        "description": "Verstehen Sie, wie Einstellungen auf Mitarbeiter angewendet werden.",
+        "default": "Standardeinstellungen",
+        "defaultDescription": "Die auf dieser Seite konfigurierten Basiseinstellungen. Werden angewendet, wenn keine Gruppen- oder Einzeleinstellungen existieren.",
+        "group": "Gruppeneinstellungen",
+        "groupDescription": "Für Mitarbeitergruppen konfigurierte Einstellungen. Überschreiben die Standardeinstellungen für alle Gruppenmitglieder.",
+        "individual": "Einzeleinstellungen",
+        "individualDescription": "Für einzelne Mitarbeiter konfigurierte Einstellungen. Haben die höchste Priorität und überschreiben sowohl Standard- als auch Gruppeneinstellungen."
+      }
+    },
+    "common": {
+      "cancel": "Abbrechen",
+      "delete": "Löschen",
+      "edit": "Bearbeiten"
+    }
+  },
   "LoginForm": {
     "title": "Melden Sie sich in Ihrem Konto an",
     "subtitle": "Geben Sie unten Ihre E-Mail-Adresse ein, um sich in Ihrem Konto anzumelden",
@@ -9,9 +145,14 @@
   },
   "AppSidebar": {
     "navigation": "Navigation",
+    "hrManagement": "Personalverwaltung",
     "home": "Startseite",
     "calendar": "Kalender",
     "timeRecords": "Zeiterfassung",
+    "employees": "Mitarbeiter",
+    "employeeGroups": "Mitarbeitergruppen",
+    "requests": "Anträge",
+    "employeeSettings": "Mitarbeitereinstellungen",
     "settings": "Einstellungen",
     "logout": "Abmelden"
   },
@@ -19,7 +160,11 @@
     "items": {
       "home": "Startseite",
       "calendar": "Kalender",
-      "timerecords": "Zeiterfassung"
+      "timerecords": "Zeiterfassung",
+      "employees": "Mitarbeiter",
+      "employee-groups": "Mitarbeitergruppen",
+      "requests": "Anträge",
+      "employee-settings": "Mitarbeitereinstellungen"
     }
   },
   "FloatingButtons": {
