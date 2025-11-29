@@ -1,21 +1,17 @@
 import Holidays from "date-holidays";
+import { EmployeeSettings as PrismaEmployeeSettings } from "@prisma/client";
 
 // Get holiday regions from date-holidays package
 export type HolidayRegion = ReturnType<typeof Holidays.prototype.getCountries> extends Record<string, string> ? string : string;
 
-// Common settings that apply to users, groups, and general defaults
-export interface EmployeeSettings {
-  vacationDays: number;
-  dailyHours: number;
-  hasFlextime: boolean;
-  holidayRegion: string;
-  minBreakTime: number; // in minutes
-  canWorkRemote: boolean;
-  canSelfApprove: boolean;
-}
+// Pick only the settings fields from Prisma's EmployeeSettings (excluding id, isDefault, timestamps, relations)
+export type EmployeeSettingsData = Pick<
+  PrismaEmployeeSettings,
+  "vacationDays" | "dailyHours" | "hasFlextime" | "holidayRegion" | "minBreakTime" | "canWorkRemote" | "canSelfApprove"
+>;
 
-// User-specific fields
-export interface User extends EmployeeSettings {
+// User-specific fields combined with settings
+export interface User extends EmployeeSettingsData {
   id: string;
   name: string;
   employeeNumber: string;
@@ -36,13 +32,8 @@ export interface UpdateUserData extends Partial<Omit<User, "id" | "password">> {
   newPassword?: string;
 }
 
-// User Group
-export interface UserGroup extends EmployeeSettings {
+// User Group combined with settings
+export interface UserGroup extends EmployeeSettingsData {
   id: string;
   name: string;
-}
-
-// Default/general employee settings
-export interface DefaultEmployeeSettings extends EmployeeSettings {
-  id: "default";
 }

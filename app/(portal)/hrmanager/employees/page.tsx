@@ -2,7 +2,7 @@ import { getEmployees } from "./actions";
 import { getEmployeeGroups } from "../employee-groups/actions";
 import { getDefaultEmployeeSettings } from "../employee-settings/actions";
 import { EmployeesClient } from "./employees-client";
-import type { UserGroup, EmployeeSettings } from "@/types/employee";
+import type { UserGroup, EmployeeSettingsData } from "@/types/employee";
 
 export default async function EmployeesPage() {
   const [employees, groupsData, defaultSettingsData] = await Promise.all([
@@ -25,7 +25,7 @@ export default async function EmployeesPage() {
   }));
 
   // Convert default settings
-  const defaultSettings: EmployeeSettings = {
+  const defaultSettings: EmployeeSettingsData = {
     vacationDays: defaultSettingsData.vacationDays,
     dailyHours: defaultSettingsData.dailyHours,
     hasFlextime: defaultSettingsData.hasFlextime,

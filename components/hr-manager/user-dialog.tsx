@@ -29,19 +29,19 @@ import {
   FieldSeparator,
 } from "@/components/ui/field";
 import { EmployeeSettingsForm } from "./employee-settings-form";
-import { type User, type UserGroup, type EmployeeSettings } from "@/types/employee";
+import { type User, type UserGroup, type EmployeeSettingsData } from "@/types/employee";
 
 interface UserDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   user?: User;
   groups: UserGroup[];
-  defaultSettings: EmployeeSettings;
+  defaultSettings: EmployeeSettingsData;
   onSave: (user: Omit<User, "id"> & { id?: string; password?: string }) => void;
   onResetPassword?: (userId: string) => void;
 }
 
-const emptySettings: EmployeeSettings = {
+const emptySettings: EmployeeSettingsData = {
   vacationDays: 30,
   dailyHours: 8,
   hasFlextime: false,
@@ -132,7 +132,7 @@ export function UserDialog({
     }
   }, [open, user, defaultSettings]);
 
-  const handleSettingsChange = (settings: EmployeeSettings) => {
+  const handleSettingsChange = (settings: EmployeeSettingsData) => {
     setFormData((prev) => ({ ...prev, ...settings }));
   };
 

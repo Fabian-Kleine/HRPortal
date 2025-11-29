@@ -13,11 +13,11 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { EmployeeSettingsForm } from "@/components/hr-manager/employee-settings-form";
-import type { EmployeeSettings } from "@/types/employee";
+import type { EmployeeSettingsData } from "@/types/employee";
 import { updateDefaultEmployeeSettings, type DefaultEmployeeSettings } from "./actions";
 
 // Default fallback settings
-const fallbackDefaults: EmployeeSettings = {
+const fallbackDefaults: EmployeeSettingsData = {
   vacationDays: 30,
   dailyHours: 8,
   hasFlextime: true,
@@ -35,8 +35,8 @@ export function EmployeeSettingsClient({ initialSettings }: EmployeeSettingsClie
   const t = useTranslations("HRManager.settings");
   const [isPending, startTransition] = useTransition();
   
-  // Convert to EmployeeSettings type
-  const initialEmployeeSettings: EmployeeSettings = {
+  // Convert to EmployeeSettingsData type
+  const initialEmployeeSettings: EmployeeSettingsData = {
     vacationDays: initialSettings.vacationDays,
     dailyHours: initialSettings.dailyHours,
     hasFlextime: initialSettings.hasFlextime,
@@ -46,8 +46,8 @@ export function EmployeeSettingsClient({ initialSettings }: EmployeeSettingsClie
     canSelfApprove: initialSettings.canSelfApprove,
   };
   
-  const [settings, setSettings] = useState<EmployeeSettings>(initialEmployeeSettings);
-  const [savedSettings, setSavedSettings] = useState<EmployeeSettings>(initialEmployeeSettings);
+  const [settings, setSettings] = useState<EmployeeSettingsData>(initialEmployeeSettings);
+  const [savedSettings, setSavedSettings] = useState<EmployeeSettingsData>(initialEmployeeSettings);
 
   const hasChanges = JSON.stringify(settings) !== JSON.stringify(savedSettings);
 
@@ -55,7 +55,7 @@ export function EmployeeSettingsClient({ initialSettings }: EmployeeSettingsClie
     startTransition(async () => {
       try {
         const updated = await updateDefaultEmployeeSettings(settings);
-        const updatedSettings: EmployeeSettings = {
+        const updatedSettings: EmployeeSettingsData = {
           vacationDays: updated.vacationDays,
           dailyHours: updated.dailyHours,
           hasFlextime: updated.hasFlextime,

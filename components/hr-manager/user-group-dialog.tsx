@@ -19,13 +19,13 @@ import {
   FieldSeparator,
 } from "@/components/ui/field";
 import { EmployeeSettingsForm } from "./employee-settings-form";
-import { type UserGroup, type EmployeeSettings } from "@/types/employee";
+import { type UserGroup, type EmployeeSettingsData } from "@/types/employee";
 
 interface UserGroupDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   group?: UserGroup;
-  defaultSettings: EmployeeSettings;
+  defaultSettings: EmployeeSettingsData;
   onSave: (group: Omit<UserGroup, "id"> & { id?: string }) => void;
 }
 
@@ -74,7 +74,7 @@ export function UserGroupDialog({
     }
   }, [open, group, defaultSettings]);
 
-  const handleSettingsChange = (settings: EmployeeSettings) => {
+  const handleSettingsChange = (settings: EmployeeSettingsData) => {
     setFormData((prev) => ({ ...prev, ...settings }));
   };
 
