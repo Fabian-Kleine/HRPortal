@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/card";
 import { UserDialog } from "@/components/hr-manager/user-dialog";
 import { DeleteConfirmDialog } from "@/components/hr-manager/delete-confirm-dialog";
-import type { User, UserGroup, EmployeeSettings } from "@/types/employee";
+import type { User, UserGroup, EmployeeSettingsData } from "@/types/employee";
 import { 
   createEmployee, 
   updateEmployee, 
@@ -34,7 +34,7 @@ import {
 interface EmployeesClientProps {
   initialEmployees: EmployeeWithRelations[];
   groups: UserGroup[];
-  defaultSettings: EmployeeSettings;
+  defaultSettings: EmployeeSettingsData;
 }
 
 export function EmployeesClient({ 

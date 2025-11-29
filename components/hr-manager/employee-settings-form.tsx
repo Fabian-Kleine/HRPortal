@@ -10,11 +10,11 @@ import {
   FieldGroup,
 } from "@/components/ui/field";
 import { HolidayRegionSelector } from "./holiday-region-selector";
-import type { EmployeeSettings } from "@/types/employee";
+import type { EmployeeSettingsData } from "@/types/employee";
 
 interface EmployeeSettingsFormProps {
-  settings: EmployeeSettings;
-  onChange: (settings: EmployeeSettings) => void;
+  settings: EmployeeSettingsData;
+  onChange: (settings: EmployeeSettingsData) => void;
   disabled?: boolean;
 }
 
@@ -25,9 +25,9 @@ export function EmployeeSettingsForm({
 }: EmployeeSettingsFormProps) {
   const t = useTranslations("HRManager.settings");
   
-  const updateField = <K extends keyof EmployeeSettings>(
+  const updateField = <K extends keyof EmployeeSettingsData>(
     field: K,
-    value: EmployeeSettings[K]
+    value: EmployeeSettingsData[K]
   ) => {
     onChange({ ...settings, [field]: value });
   };

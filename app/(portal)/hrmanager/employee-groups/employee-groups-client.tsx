@@ -23,7 +23,7 @@ import {
 import { UserGroupDialog } from "@/components/hr-manager/user-group-dialog";
 import { DeleteConfirmDialog } from "@/components/hr-manager/delete-confirm-dialog";
 import { getHolidayRegionName } from "@/components/hr-manager/holiday-region-selector";
-import type { UserGroup, EmployeeSettings } from "@/types/employee";
+import type { UserGroup, EmployeeSettingsData } from "@/types/employee";
 import { 
   createEmployeeGroup, 
   updateEmployeeGroup, 
@@ -33,7 +33,7 @@ import {
 
 interface EmployeeGroupsClientProps {
   initialGroups: EmployeeGroupWithRelations[];
-  defaultSettings: EmployeeSettings;
+  defaultSettings: EmployeeSettingsData;
 }
 
 export function EmployeeGroupsClient({ 
